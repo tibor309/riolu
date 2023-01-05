@@ -36,9 +36,9 @@ async def on_message(message):
 #keep_alive()
 try:
   bot.run(bot_token)
-except discord.HTTPException as err:  # If discord blocks the current ip, request a new one then restart the bot.
+except discord.HTTPException as err:
     if err.status == 429:
         print("The Discord servers denied the connection for making too many requests")
-        #os.system('kill 1')
+        print("Get help from https://stackoverflow.com/questions/66724687/in-discord-py-how-to-solve-the-error-for-toomanyrequests")
     else:
         raise err
