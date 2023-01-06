@@ -1,6 +1,7 @@
 import aiohttp, io
 import discord
 from discord.ext import commands
+import requests
 from config import bot_color
 
 
@@ -74,6 +75,22 @@ class fun_commands(commands.Cog):
                 else:
                     await ctx.followup.send('Failed to get the image :(', ephemeral=True)
                 await session.close()
+
+
+
+    # Funny 8ball
+    @discord.slash_command(name="8ball", description="Talk to the magic ball")
+    @discord.option("question", str, description="What is your question?", required=True)
+    async def ball(self, ctx, question:str):
+        api = "https://api.popcat.xyz/8ball"
+
+        await ctx.defer()
+        response = requests.get(api, verify=True)
+        data = response.json()
+        embed = discord.Embed(color=bot_color, description=f"🎱 " + data['answer'])
+        await ctx.followup.send(f"> {question}", embed=embed)
+        
+        
 
         
 

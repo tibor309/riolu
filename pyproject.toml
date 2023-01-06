@@ -5,7 +5,7 @@ description = "A discord bot with some fun commands. Also using pycord."
 authors = ["Tibor Mercs <tibormercs8@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 numpy = "^1.22.2"
 replit = "^3.2.4"
 py-cord = "^2.1.1"
