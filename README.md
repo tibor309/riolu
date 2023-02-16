@@ -12,7 +12,7 @@ Rialu is a discord bot that allows you to create funny images of others. Current
 
 ## Setup
 ### Replit
-Click on the Replit button above, and clone my repl. Then head over to the secrets tab and a new secret called `TOKEN`, and fill out the value field with your bot token. After everything set up, just click on the run button You can change more stuff in the config if you want!
+Click on the Replit button above, and clone my repl. Then head over to the secrets tab and a new secret called `TOKEN`, and fill out the value field with your bot token. After everything set up, just click on the run button You can change more stuff in the config if you want! Optionally you can enable the Flask server to make the bot run 24/7.
 
 ### Source
 If you prefer it you can host your own copy of this bot! First, install all the required packages with this command. **Make sure you install [py-cord][py-cord] instead of discord.py!**
@@ -24,6 +24,6 @@ Then create an `.env` file, and put your bot token in it like below. **Never sha
 TOKEN = "your bot token"
 ```
 
-And if you're ready, run the bot with the `python3 main.py` command!
+If you're ready, run the bot with the `python3 main.py` command!
 
 [py-cord]: https://github.com/Pycord-Development/pycord/
