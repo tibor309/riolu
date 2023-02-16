@@ -3,12 +3,8 @@ commands/__pycache__/
 utils/__pycache__/
 .cache/
 
-.replit
-replit.nix
 .breakpoints
 .config/
 venv/
 .env
 .upm/
-
-poetry.lock

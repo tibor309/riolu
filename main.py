@@ -1,15 +1,14 @@
 import discord
 import os
 from discord.ext import commands
-from config import bot_prefix, bot_token, bot_time
-import datetime
+from config import bot_token, bot_time
 
-#from keep_alive import keep_alive
+#from keep_alive import keep_alive # Flask app to make the bot run (uncomment if you're on replit)
 
 intents = discord.Intents.default()
-intents.message_content = True
+intents.message_content = True # Enable intents in the discord dev portal
 
-bot = commands.Bot(command_prefix=bot_prefix, intents=intents, help_command=None)
+bot = commands.Bot(intents=intents, help_command=None)
 
 
 # Load commands and events
@@ -18,13 +17,13 @@ for f in os.listdir("./commands"):
         try:
             bot.load_extension("commands." + f[:-3]) # commands
         except Exception as error:
-            print((datetime.datetime.now().strftime(f"[{bot_time}]")), f"ERROR {f} could not be loaded: {error}")
+            print((discord.utils.utcnow().strftime(f"[{bot_time}]")), f"ERROR {f} could not be loaded: {error}")
         else:
-            print((datetime.datetime.now().strftime(f"[{bot_time}]")),f"Loaded {f}")
+            print((discord.utils.utcnow().strftime(f"[{bot_time}]")),f"Loaded {f}")
 
 @bot.event
 async def on_ready():
-    print((datetime.datetime.now().strftime(f"[{bot_time}]")), f"Logged in as {bot.user}")
+    print((discord.utils.utcnow().strftime(f"[{bot_time}]")), f"Logged in as {bot.user}")
 
 # Make bot not respond to it's owm messages
 @bot.event
