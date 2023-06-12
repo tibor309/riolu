@@ -90,7 +90,17 @@ class fun_commands(commands.Cog):
         embed = discord.Embed(color=bot_color, description=f"🎱 " + data['answer'])
         await ctx.followup.send(f"> {question}", embed=embed)
         
-        
+
+    # Love is in the air? Wrong, gas leak
+    @discord.slash_command(name="pickuplines", description="Yo shawty, take me out to dinner")
+    async def pickuplines(self, ctx):
+        api = "https://api.popcat.xyz/pickuplines"
+
+        await ctx.defer()
+        response = requests.get(api, verify=True)
+        data = response.json()
+        embed = discord.Embed(color=bot_color, description=data['pickupline'])
+        await ctx.followup.send(embed=embed)
 
         
 

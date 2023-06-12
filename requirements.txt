@@ -1,3 +1,4 @@
 python-dotenv
 aiohttp
 py-cord
+requests
