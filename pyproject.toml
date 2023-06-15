@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "Riolu"
 version = "2.0"
-description = "A discord bot with some fun commands. Also using pycord."
+description = "An another discord bot for friends, with some fun commands."
 authors = ["Tibor Mercs <tibormercs8@gmail.com>"]
 
 [tool.poetry.dependencies]

@@ -3,15 +3,13 @@ import os
 from discord.ext import commands
 from config import bot_token, bot_time
 
-#from keep_alive import keep_alive # Flask app to make the bot run 24/7 (uncomment if you're on replit)
+#from keep_alive import keep_alive # Flask server to make the bot run 24/7 (uncomment if you're on replit or similar)
 
 intents = discord.Intents.default()
-#intents.message_content = True # Enable intents in the discord dev portal
-
 bot = commands.Bot(intents=intents, help_command=None)
 
 
-# Load commands and events
+# Load commands
 for f in os.listdir("./commands"):
     if f.endswith(".py"):
         try:
@@ -32,7 +30,8 @@ async def on_message(message):
         return
 
 
-#keep_alive()
+#keep_alive() # uncomment this too
+
 try:
   bot.run(bot_token)
 except discord.HTTPException as err:
